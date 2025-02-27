@@ -23,3 +23,8 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 # JPA Configuration
 spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect  
+
+## Section-2 UC-1 
+- **Introducing DTO for request and Response** 
+- **Introducing the Model(Entity) to save data in database** 
+- **DTO add  extra abstraction layer to the user interaction**
