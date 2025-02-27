@@ -1,37 +1,40 @@
 package com.bridgelabz.employeepayrollapp.controller;
+
 import com.bridgelabz.employeepayrollapp.dto.EmployeeRequestDTO;
 import com.bridgelabz.employeepayrollapp.dto.EmployeeResponseDTO;
+import com.bridgelabz.employeepayrollapp.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-// RestController to send the response
 @RestController
 @RequestMapping("/employeepayrollservice")
 public class EmployeeController {
 
-    // Create a controller to GET employee
+    // Injecting EmployeeService using @Autowired
+    @Autowired
+    private EmployeeService employeeService;
+
+    // GET Employee
     @GetMapping("/get")
     public EmployeeResponseDTO getEmployee() {
-        return new EmployeeResponseDTO("Ajeet" , 45000);
+        return employeeService.getEmployee();
     }
 
-    // addEmployee method to add the Employee
+    // POST - Add Employee
     @PostMapping("/create")
-    public EmployeeResponseDTO  addEmployee(@RequestBody EmployeeRequestDTO employeeRequestDTO) {
-        return new EmployeeResponseDTO(employeeRequestDTO.getName(), employeeRequestDTO.getSalary());
+    public EmployeeResponseDTO addEmployee(@RequestBody EmployeeRequestDTO employeeRequestDTO) {
+        return employeeService.addEmployee(employeeRequestDTO.getName(), employeeRequestDTO.getSalary());
     }
 
-    // PUT - Update employee by ID in existing database
+    // PUT - Update Employee
     @PutMapping("/update/{id}")
-    public EmployeeResponseDTO updateEmployee(@PathVariable Long id, @RequestBody EmployeeRequestDTO employeeRequestDTO) {
-        // Logic to update the employee with new details
-        return new EmployeeResponseDTO(employeeRequestDTO.getName(), employeeRequestDTO.getSalary());
+    public String updateEmployee(@PathVariable Long id) {
+        return employeeService.updateEmployee(id);
     }
 
-
+    // DELETE - Delete Employee
     @DeleteMapping("/delete/{id}")
     public String deleteEmployee(@PathVariable Long id) {
-        // Logic to delete the employee from the database
-        return "Employee with ID " + id + " deleted successfully!";
+        return employeeService.deleteEmployee(id);
     }
-
 }
