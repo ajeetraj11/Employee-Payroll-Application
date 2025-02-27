@@ -34,3 +34,10 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 - **Introducing Service Layer for Business Logic**
 - **Adding Abstraction Layer for User request** 
 - **Now Controller Interact with Service Layer then service layer Respond the user request**
+
+## Section-2 UC-3
+- **Temporally Storing Data in List**
+- **Adding Employee to the List**
+- **Getting Employee from the List**
+- **Updating Employee in the List**
+- **Deleting Employee from the List** 
