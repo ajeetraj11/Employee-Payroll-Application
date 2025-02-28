@@ -86,3 +86,40 @@ logging.file.name=logs/app.log
 - **Determining Different Logging Based on Application Running**
 - **like Different for Dev**
 - **like Different for Prod** 
+
+
+## Section-3 UC-4
+- **I have added the DB_URL, DB_USERNAME and DB_PASSWORD in Environment Variables**
+- Steps to configure the environment variable
+
+# Configure Environment Variables in IntelliJ IDEA
+
+#### **Step 1: Open Run/Debug Configurations**
+1. Open **IntelliJ IDEA**.
+2. Click on **Run** from the top menu.
+3. Select **Edit Configurations**.
+   ![Image](https://github.com/user-attachments/assets/83061f90-a3fe-45d3-86be-00abfe918a34)
+#### **Step 2: Select Your Application**
+1. In the left panel, select your application (e.g., `EmployeePayrollAppApplication`).
+2. If no configuration exists, click the **+** button and select **Application**.
+   ![Image](https://github.com/user-attachments/assets/540e340d-a191-432d-93b0-2a024dd3a665)
+#### **Step 3: Add Environment Variables**
+1. Find the **Environment variables** field.
+2. Click on the **folder icon** 📁 next to it.
+3. A new window titled **Environment Variables** will open.
+
+#### **Step 4: Set Environment Variables**
+1. Click the **+ (Add)** button.
+2. Enter your key-value pair:
+- **Key:** `DB_USERNAME`
+- **Value:** `USERNAME`
+- **Key:** `DB_PASSWORD`
+- **Value:** `yourpassword`
+3. Click **OK** to save.
+
+#### **Step 5: Apply and Run**
+1. Click **Apply** and then **OK**.
+2. Run your application using the **Run** button.
+
+
+
