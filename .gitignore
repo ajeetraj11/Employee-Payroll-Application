@@ -5,6 +5,7 @@ src/main/resources/application-prod.properties
 mvnw
 mvnw.cmd
 logs/*.log
+.gitignore
 
 HELP.md
 target/
@@ -42,4 +43,4 @@ build/
 
 .idea/
 
-.logs/
+logs/
