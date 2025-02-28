@@ -47,3 +47,33 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 - **Adding Lombok Dependency in `pom.xml`**
 - **Using Lombok Annotations to Generate Getters, Setters, Constructors, etc.**
 - **Removing Boilerplate Code from DTO Classes**
+
+## Section-3 UC-2
+
+### Configuration Code for Logger
+*(I used this in UC-2, but `application.properties` is not included in the GitHub repository. To run this, manually add these lines to `application.properties`.)*
+
+```properties
+# Set log level for the application
+logging.level.root=INFO
+logging.level.com.example=DEBUG
+
+# Log output format
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+
+# Log file output
+logging.file.name=logs/app.log
+``` 
+
+### 1. Adding Logger to the Project
+- Include the necessary logging dependency in `pom.xml` (if using Maven).
+
+### 2. Using Logger to Log Information
+- Implement logging in the application using different log levels:
+    - `INFO` – General information about the application's flow.
+    - `DEBUG` – Detailed debugging information.
+    - `WARN` – Warning messages about potential issues.
+    - `ERROR` – Errors that need attention.
+
+### 3. Configuring Logger Settings
+- Define the log levels and specify how logs should be formatted.
