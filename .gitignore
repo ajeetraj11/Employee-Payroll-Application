@@ -4,6 +4,7 @@ src/main/resources/application-prod.properties
 .gitattributes
 mvnw
 mvnw.cmd
+logs/*.log
 
 HELP.md
 target/
