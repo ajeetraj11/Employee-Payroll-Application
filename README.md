@@ -77,3 +77,12 @@ logging.file.name=logs/app.log
 
 ### 3. Configuring Logger Settings
 - Define the log levels and specify how logs should be formatted.
+
+
+## Section-3 UC-3
+- **I have added the application-prod.properties and application-dev.properties in .gitignore make sure for running log create these files**
+- **Path to Create `application-dev.properties`**: src/main/java/resources/application-dev.properties
+- **Path to Create `application-prod.properties`**: src/main/java/resources/application-prod.properties
+- **Determining Different Logging Based on Application Running**
+- **like Different for Dev**
+- **like Different for Prod** 

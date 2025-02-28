@@ -13,35 +13,42 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/employeepayrollservice")
 public class EmployeeController {
 
-    // Injecting EmployeeService using @Autowired
-    @Autowired
     private EmployeeService employeeService;
+
+    // Injecting EmployeeService using @Autowired (Constructor Injection)
+    @Autowired
+    public EmployeeController(EmployeeService employeeService){
+        this.employeeService = employeeService;
+    }
 
     // GET Employee
     @GetMapping("/getById/{id}")
-    public Employee getEmployee(@PathVariable Long id) {
+    public EmployeeResponseDTO getEmployee(@PathVariable Long id) {
         log.info("Received GET request for Employee with ID: {}", id);
 
         // Make a call to getEmployeeById and log the result
         Employee employee = employeeService.getEmployeeById(id);
 
+        EmployeeResponseDTO employeeDetails = new EmployeeResponseDTO( employee.getName() , employee.getSalary());
+
         log.info("Returning Employee: {}", employee);
-        return employee;
+        return employeeDetails;
     }
 
     // POST - Add Employee
     @PostMapping("/create")
-    public Employee addEmployee(@RequestBody EmployeeRequestDTO employeeRequestDTO) {
+    public EmployeeResponseDTO addEmployee(@RequestBody EmployeeRequestDTO employeeRequestDTO) {
         log.debug("Creating a EEmployee  with id {} ", employeeRequestDTO.getId());
         Employee employee = employeeService.addEmployee( new Employee(employeeRequestDTO.getId() ,employeeRequestDTO.getName(), employeeRequestDTO.getSalary()));
+        EmployeeResponseDTO employeeDetails = new EmployeeResponseDTO( employee.getName() , employee.getSalary());
         log.info("Successfully employee created {}" , employee);
-        return employee;
+        return employeeDetails;
     }
 
     // PUT - Update Employee
     @PutMapping("/update/{id}")
-    public Employee updateEmployee(@PathVariable Long id , @RequestBody EmployeeRequestDTO employeeRequestDTO) {
-        return employeeService.updateEmployee(id , new Employee(employeeRequestDTO.getId() , employeeRequestDTO.getName() , employeeRequestDTO.getSalary()));
+    public EmployeeResponseDTO updateEmployee(@PathVariable Long id , @RequestBody EmployeeRequestDTO employeeRequestDTO) {
+        return employeeService.updateEmployee(id , employeeRequestDTO);
     }
 
     // DELETE - Delete Employee
