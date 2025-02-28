@@ -86,3 +86,7 @@ logging.file.name=logs/app.log
 - **Determining Different Logging Based on Application Running**
 - **like Different for Dev**
 - **like Different for Prod** 
+
+## Section-4 UC1
+- **Validation in DTORequest for validating the name**
+- **@Valid Annotation and @Pattern for name Field Validation**
