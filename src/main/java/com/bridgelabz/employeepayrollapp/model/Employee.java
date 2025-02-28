@@ -1,5 +1,8 @@
 package com.bridgelabz.employeepayrollapp.model;
 import jakarta.persistence.*;
+import lombok.ToString;
+
+@ToString
 // Marks this class as a JPA entity
 @Entity
 // Specifies the table name in the database
