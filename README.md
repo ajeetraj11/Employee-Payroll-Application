@@ -41,3 +41,9 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 - **Getting Employee from the List**
 - **Updating Employee in the List**
 - **Deleting Employee from the List** 
+
+## Section-3 UC-1
+- **Introducing Lombok for Reducing Boilerplate Code**
+- **Adding Lombok Dependency in `pom.xml`**
+- **Using Lombok Annotations to Generate Getters, Setters, Constructors, etc.**
+- **Removing Boilerplate Code from DTO Classes**
