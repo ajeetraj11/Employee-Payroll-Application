@@ -4,6 +4,7 @@ import com.bridgelabz.employeepayrollapp.dto.EmployeeRequestDTO;
 import com.bridgelabz.employeepayrollapp.dto.EmployeeResponseDTO;
 import com.bridgelabz.employeepayrollapp.model.Employee;
 import com.bridgelabz.employeepayrollapp.service.EmployeeService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -37,7 +38,7 @@ public class EmployeeController {
 
     // POST - Add Employee
     @PostMapping("/create")
-    public EmployeeResponseDTO addEmployee(@RequestBody EmployeeRequestDTO employeeRequestDTO) {
+    public EmployeeResponseDTO addEmployee(@Valid  @RequestBody EmployeeRequestDTO employeeRequestDTO) {
         log.debug("Creating a EEmployee  with id {} ", employeeRequestDTO.getId());
         Employee employee = employeeService.addEmployee( new Employee(employeeRequestDTO.getId() ,employeeRequestDTO.getName(), employeeRequestDTO.getSalary()));
         EmployeeResponseDTO employeeDetails = new EmployeeResponseDTO( employee.getName() , employee.getSalary());
@@ -47,8 +48,8 @@ public class EmployeeController {
 
     // PUT - Update Employee
     @PutMapping("/update/{id}")
-    public EmployeeResponseDTO updateEmployee(@PathVariable Long id , @RequestBody EmployeeRequestDTO employeeRequestDTO) {
-        return employeeService.updateEmployee(id , employeeRequestDTO);
+    public EmployeeResponseDTO updateEmployee(@PathVariable Long id ,@Valid @RequestBody EmployeeRequestDTO employeeRequestDTO) {
+        return employeeService.updateEmployee(id ,  employeeRequestDTO);
     }
 
     // DELETE - Delete Employee
