@@ -90,3 +90,20 @@ logging.file.name=logs/app.log
 ## Section-4 UC1
 - **Validation in DTORequest for validating the name**
 - **@Valid Annotation and @Pattern for name Field Validation**
+
+## Section-4 UC-2
+- **User Friendly Error message to name field validation**
+- **Creating Global Exception for all controller for the name validation**
+
+--- 
+
+## Section-4 UC-3
+- ####  User-Friendly Error Handling for Missing Employee ID
+
+#### Overview
+- **This update introduces a custom exception to handle cases where an invalid Employee ID is passed. The system will now return a user-friendly error message instead of a generic error.**
+
+#### Changes Implemented
+- **Custom Exception:** Defined a new exception class for Employee Not Found.
+- **Exception Handling:** Added `@ExceptionHandler` in `EmployeePayrollException` class to catch and handle the exception gracefully.
+- **Improved REST Responses:** Ensured that users receive meaningful error messages when querying non-existent Employee IDs.
