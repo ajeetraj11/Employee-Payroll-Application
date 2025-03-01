@@ -113,5 +113,9 @@ logging.file.name=logs/app.log
 - **Adding Remaining Properties to EmployeePayrollDTO and Model**
 - **Created Custom ResponseDTO to not sharing the internal model and confidential detail with the client**
 
+## Section-5 UC-2
+- **Validation of EmployeeRequest Data on different Field like salary , startDate, gender etc.**
+- **@Valid Annotation and @Pattern for name Field Validation**
+
 
 

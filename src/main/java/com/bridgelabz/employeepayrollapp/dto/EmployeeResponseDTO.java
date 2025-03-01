@@ -22,11 +22,4 @@ public class EmployeeResponseDTO{
      private String profilePic;
      private List<String> department;
 
-
-     public List<String> getDepartment(){
-          return department;
-     }
-     private void setDepartment(){
-          this.department = department;
-     }
 }
