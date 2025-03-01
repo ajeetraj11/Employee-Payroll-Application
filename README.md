@@ -118,7 +118,7 @@ logging.file.name=logs/app.log
 - **@Valid Annotation and @Pattern for name Field Validation**
 
 ## Section-5 UC-3
-- **Created Custom Exception Handler to display custom message to the user for invalid Date format
+- **Created Custom Exception Handler to display custom message to the user for invalid Date format**
 - **@JsonFormat annotation to format the date in the response**
 - **@PastOrPresent annotation to validate the date**
 - **@NotNull annotation to validate the date**
@@ -140,3 +140,7 @@ logging.file.name=logs/app.log
 ## Step 4: Auto-Creation of Tables in MySQL
 - Enable Hibernate auto-DDL feature (`spring.jpa.hibernate.ddl-auto=update`).
 - Spring Boot automatically creates tables based on entity mappings.  
+
+## Section-5 UC-5
+- **Created Custom Method for finding specific departments all employees**
+- **@Query annotation used to create custom method in JPARepository**
